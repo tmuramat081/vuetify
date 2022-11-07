@@ -106,24 +106,10 @@ export default CalendarWithIntervals.extend({
     genHeadDayLabel (day: CalendarTimestamp): VNode {
       return this.$createElement('div', {
         staticClass: 'v-calendar-daily_head-day-label',
-      }, getSlot(this, 'day-label-header', day) || [this.genHeadDayButton(day)])
+      }, getSlot(this, 'day-label-header', day))
     },
     genHeadDayButton (day: CalendarTimestamp): VNode {
-      const color = day.present ? this.color : 'transparent'
-
-      return this.$createElement(VBtn, {
-        props: {
-          color,
-          fab: true,
-          depressed: true,
-        },
-        on: this.getMouseEventHandlers({
-          'click:date': { event: 'click', stop: true },
-          'contextmenu:date': { event: 'contextmenu', stop: true, prevent: true, result: false },
-        }, nativeEvent => {
-          return { nativeEvent, ...day }
-        }),
-      }, this.dayFormatter(day, false))
+      return;
     },
     genBody (): VNode {
       return this.$createElement('div', {
