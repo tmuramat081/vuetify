@@ -108,7 +108,7 @@ export default CalendarWithIntervals.extend({
         staticClass: 'v-calendar-daily_head-day-label',
       }, getSlot(this, 'day-label-header', day))
     },
-    genHeadDayButton (day: CalendarTimestamp): VNode {
+    genHeadDayButton (day: CalendarTimestamp): void {
       return;
     },
     genBody (): VNode {
