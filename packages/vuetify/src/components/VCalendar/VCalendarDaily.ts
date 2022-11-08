@@ -94,7 +94,7 @@ export default CalendarWithIntervals.extend({
     genDayHeader (day: CalendarTimestamp, index: number): VNode[] {
       return getSlot(this, 'day-header', () => ({
         week: this.days, ...day, index,
-      })) || []
+      })) || [];
     },
     genHeadWeekday (day: CalendarTimestamp): VNode {
       const color = day.present ? this.color : undefined
@@ -109,6 +109,7 @@ export default CalendarWithIntervals.extend({
       }, getSlot(this, 'day-label-header', day))
     },
     genHeadDayButton (day: CalendarTimestamp): void {
+      console.log('deleted');
       return;
     },
     genBody (): VNode {
